@@ -126,16 +126,17 @@ export default function Home() {
       const owned: number[] = [];
       for (let id = 1; id <= totalSupply && owned.length < totalOwned; id++) {
         try {
-          const owner = await s1Client.readContract({
+          const owner = (await s1Client.readContract({
             abi: S1_ABI,
             address: S1_ADDRESS,
             functionName: "ownerOf",
             args: [BigInt(id)],
-          });
+          })) as string;
+
           if (typeof owner === "string" && owner.toLowerCase() === address.toLowerCase()) {
             owned.push(id);
           }
-                  } catch {}
+        } catch {}
       }
 
       const eligible: number[] = [];
@@ -194,22 +195,22 @@ export default function Home() {
       try {
         for (const log of receipt.logs) {
           try {
-            const decoded = decodeEventLog({
+            const decoded: any = decodeEventLog({
               abi: PCK2_ABI,
               data: log.data,
               topics: log.topics,
             });
 
-            if (decoded.eventName === "PackMinted") {
-              const startId = Number(decoded.args.startTokenId);
+            if (decoded.eventName === "PackMinted" && decoded.args) {
+              const startId = Number((decoded.args as any).startTokenId ?? 0);
               const newTokens = Array.from({ length: PACK_SIZE }, (_, i) => startId + i);
               triggerReveal(newTokens);
               break;
             }
 
-            if (decoded.eventName === "PackClaimed") {
+            if (decoded.eventName === "PackClaimed" && decoded.args) {
               await new Promise((r) => setTimeout(r, 1200));
-              const latestSupply = await publicClient.readContract({
+              const latestSupply = await publicClient?.readContract({
                 abi: PCK2_ABI,
                 address: PCK2_ADDRESS,
                 functionName: "totalSupply",
@@ -228,7 +229,7 @@ export default function Home() {
         console.error("Receipt parse failed:", err);
       }
     })();
-  }, [receipt, fetchS1Status]);
+  }, [receipt, fetchS1Status, publicClient]);
 
   // --- Handle Mint ---
   const handleMint = async () => {
