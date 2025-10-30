@@ -1,0 +1,18 @@
+{
+  "name": "Pop Culture Kids #313",
+  "description": "Pop Culture Kids Series 2 brings you a brand-new class of 3,000 NFTs featuring 150 iconic characters that parody the biggest names across music, movies, sports, politics, and pure pop chaos.",
+  "image": "https://ipfs.io/ipfs/bafybeihx2ciwvk2udpya7ulut2jci4vwtk7gnersrsu5ki7pzsqcxq6bde/313.png",
+  "edition": 313,
+  "date": 1761656565271,
+  "attributes": [
+    {
+      "trait_type": "Character",
+      "value": "BIBI NETANYAHOO"
+    },
+    {
+      "trait_type": "Background",
+      "value": "gold"
+    }
+  ],
+  "compiler": "CrankyDev"
+}

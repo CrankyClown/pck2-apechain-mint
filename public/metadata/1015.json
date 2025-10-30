@@ -1,0 +1,18 @@
+{
+  "name": "Pop Culture Kids #1015",
+  "description": "Pop Culture Kids Series 2 brings you a brand-new class of 3,000 NFTs featuring 150 iconic characters that parody the biggest names across music, movies, sports, politics, and pure pop chaos.",
+  "image": "https://ipfs.io/ipfs/bafybeihx2ciwvk2udpya7ulut2jci4vwtk7gnersrsu5ki7pzsqcxq6bde/1015.png",
+  "edition": 1015,
+  "date": 1761656766601,
+  "attributes": [
+    {
+      "trait_type": "Character",
+      "value": "MAYORAL MAMDANI"
+    },
+    {
+      "trait_type": "Background",
+      "value": "sunset"
+    }
+  ],
+  "compiler": "CrankyDev"
+}

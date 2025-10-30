@@ -1,0 +1,18 @@
+{
+  "name": "Pop Culture Kids #2838",
+  "description": "Pop Culture Kids Series 2 brings you a brand-new class of 3,000 NFTs featuring 150 iconic characters that parody the biggest names across music, movies, sports, politics, and pure pop chaos.",
+  "image": "https://ipfs.io/ipfs/bafybeihx2ciwvk2udpya7ulut2jci4vwtk7gnersrsu5ki7pzsqcxq6bde/2838.png",
+  "edition": 2838,
+  "date": 1761657299676,
+  "attributes": [
+    {
+      "trait_type": "Character",
+      "value": "COURTCASE CASSIE"
+    },
+    {
+      "trait_type": "Background",
+      "value": "foil"
+    }
+  ],
+  "compiler": "CrankyDev"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "Pop Culture Kids #520",
+  "description": "Pop Culture Kids Series 2 brings you a brand-new class of 3,000 NFTs featuring 150 iconic characters that parody the biggest names across music, movies, sports, politics, and pure pop chaos.",
+  "image": "https://ipfs.io/ipfs/bafybeihx2ciwvk2udpya7ulut2jci4vwtk7gnersrsu5ki7pzsqcxq6bde/520.png",
+  "edition": 520,
+  "date": 1761656621842,
+  "attributes": [
+    {
+      "trait_type": "Character",
+      "value": "DARTH SOROS"
+    },
+    {
+      "trait_type": "Background",
+      "value": "geez orange"
+    }
+  ],
+  "compiler": "CrankyDev"
+}

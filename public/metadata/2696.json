@@ -1,0 +1,18 @@
+{
+  "name": "Pop Culture Kids #2696",
+  "description": "Pop Culture Kids Series 2 brings you a brand-new class of 3,000 NFTs featuring 150 iconic characters that parody the biggest names across music, movies, sports, politics, and pure pop chaos.",
+  "image": "https://ipfs.io/ipfs/bafybeihx2ciwvk2udpya7ulut2jci4vwtk7gnersrsu5ki7pzsqcxq6bde/2696.png",
+  "edition": 2696,
+  "date": 1761657258212,
+  "attributes": [
+    {
+      "trait_type": "Character",
+      "value": "TALK SHOW JIMMY"
+    },
+    {
+      "trait_type": "Background",
+      "value": "cannabis"
+    }
+  ],
+  "compiler": "CrankyDev"
+}

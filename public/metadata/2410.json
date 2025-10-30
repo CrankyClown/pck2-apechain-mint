@@ -1,0 +1,18 @@
+{
+  "name": "Pop Culture Kids #2410",
+  "description": "Pop Culture Kids Series 2 brings you a brand-new class of 3,000 NFTs featuring 150 iconic characters that parody the biggest names across music, movies, sports, politics, and pure pop chaos.",
+  "image": "https://ipfs.io/ipfs/bafybeihx2ciwvk2udpya7ulut2jci4vwtk7gnersrsu5ki7pzsqcxq6bde/2410.png",
+  "edition": 2410,
+  "date": 1761657174988,
+  "attributes": [
+    {
+      "trait_type": "Character",
+      "value": "THE HANSEL TWINS"
+    },
+    {
+      "trait_type": "Background",
+      "value": "sunset"
+    }
+  ],
+  "compiler": "CrankyDev"
+}

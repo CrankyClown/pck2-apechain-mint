@@ -1,0 +1,25 @@
+# Node & build
+node_modules/
+.next/
+out/
+dist/
+.cache/
+*.log
+
+# Env & OS
+.env*
+.DS_Store
+
+# Videos & binaries
+*.mov
+*.mp4
+*.zip
+*.gz
+*.tar
+/public/videos/
+/public/temp/
+/public/assets/TempVideo.mov
+
+# IDE
+.vscode/
+.idea/

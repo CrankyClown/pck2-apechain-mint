@@ -1,0 +1,18 @@
+{
+  "name": "Pop Culture Kids #1226",
+  "description": "Pop Culture Kids Series 2 brings you a brand-new class of 3,000 NFTs featuring 150 iconic characters that parody the biggest names across music, movies, sports, politics, and pure pop chaos.",
+  "image": "https://ipfs.io/ipfs/bafybeihx2ciwvk2udpya7ulut2jci4vwtk7gnersrsu5ki7pzsqcxq6bde/1226.png",
+  "edition": 1226,
+  "date": 1761656828352,
+  "attributes": [
+    {
+      "trait_type": "Character",
+      "value": "MAGA MELANIA"
+    },
+    {
+      "trait_type": "Background",
+      "value": "apechain"
+    }
+  ],
+  "compiler": "CrankyDev"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "Pop Culture Kids #1792",
+  "description": "Pop Culture Kids Series 2 brings you a brand-new class of 3,000 NFTs featuring 150 iconic characters that parody the biggest names across music, movies, sports, politics, and pure pop chaos.",
+  "image": "https://ipfs.io/ipfs/bafybeihx2ciwvk2udpya7ulut2jci4vwtk7gnersrsu5ki7pzsqcxq6bde/1792.png",
+  "edition": 1792,
+  "date": 1761656993461,
+  "attributes": [
+    {
+      "trait_type": "Character",
+      "value": "BASEBALL BULLY"
+    },
+    {
+      "trait_type": "Background",
+      "value": "metaverse"
+    }
+  ],
+  "compiler": "CrankyDev"
+}

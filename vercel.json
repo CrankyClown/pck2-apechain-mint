@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "next.config.js", "use": "@vercel/next" }
+  ],
+  "env": {
+    "NEXT_PUBLIC_SITE_URL": "https://pck2mint.com",
+    "NEXT_PUBLIC_CHAIN": "apechain",
+    "NEXT_PUBLIC_RPC_URL": "https://rpc.apechain.com",
+    "NEXT_PUBLIC_CHAIN_ID": "33139",
+    "NEXT_PUBLIC_BASE_URI": "ipfs://bafybeigwlpcpzv7fab3b3ecc2zq3orabju6arqt2pcsb4lluolizvji3ae/",
+    "NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID": "193e3d2640a17092ba1833d07ad029d1",
+    "NEXT_PUBLIC_PCK2_ADDRESS": "0x95304C0C3f700D9059f727FB77840D22086465A9",
+    "NEXT_TELEMETRY_DISABLED": "1"
+  }
+}
