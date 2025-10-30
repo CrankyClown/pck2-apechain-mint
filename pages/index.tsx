@@ -19,7 +19,7 @@ import { createPublicClient, http } from "viem";
 import { sepolia } from "viem/chains";
 
 const PACK_SIZE = 3;
-const TARGET_CHAIN_ID = 33139; 
+const TARGET_CHAIN_ID = 33139; // ✅ ApeChain mainnet
 const S1_ADDRESS = "0x6516f59224AeEfa810e3E37161FaA7658eE85BF3";
 
 export default function Home() {
@@ -60,16 +60,20 @@ export default function Home() {
 
   // --- Fetch wallet balance (auto-refresh every 10s) ---
   useEffect(() => {
-    if (!address) return setWalletBalance("");
+    if (!address || !publicClient) return setWalletBalance("");
 
     const fetchBalance = async () => {
       try {
+        if (!publicClient || !address) return;
+
         const balance = await publicClient.getBalance({ address });
-        const eth = parseFloat(formatEther(balance)).toFixed(4);
+        const formatted = parseFloat(formatEther(balance)).toFixed(4);
+
         let symbol = "ETH";
-        if (chainId === 11155111) symbol = "SepoliaETH";
         if (chainId === 33139) symbol = "APE";
-        setWalletBalance(`${eth} ${symbol}`);
+        else if (chainId === 11155111) symbol = "SepoliaETH";
+
+        setWalletBalance(`${formatted} ${symbol}`);
       } catch (err) {
         console.warn("⚠️ Could not fetch balance:", err);
         setWalletBalance("");
@@ -180,7 +184,6 @@ export default function Home() {
       audio.volume = 0.4;
       audio.play().catch(() => console.log("Sound autoplay blocked"));
 
-      // 🔄 Auto-refresh after claim
       await new Promise((r) => setTimeout(r, 2500));
       fetchS1Status();
     };
@@ -231,7 +234,7 @@ export default function Home() {
     setMintSuccess(false);
     try {
       if (!address) throw new Error("Connect wallet first");
-      if (chainId !== TARGET_CHAIN_ID) throw new Error("Wrong network. Please switch to Sepolia.");
+      if (chainId !== TARGET_CHAIN_ID) throw new Error("Wrong network. Please switch to ApeChain.");
       const valueToSend = mintPrice ? (mintPrice as bigint) : 0n;
       await writeContract({
         abi: PCK2_ABI,
@@ -254,7 +257,7 @@ export default function Home() {
       if (eligibleS1.length < 3) throw new Error("Not enough unclaimed S1 tokens (need 3).");
 
       const idsToUse = eligibleS1.slice(0, 3).map((n) => BigInt(n));
-      const currentNonce = await publicClient.readContract({
+      const currentNonce = await publicClient?.readContract({
         abi: PCK2_ABI,
         address: PCK2_ADDRESS,
         functionName: "claimNonce",
@@ -278,7 +281,7 @@ export default function Home() {
     setShowReveal(false);
     setErrorMsg(null);
     setMintSuccess(false);
-    await fetchS1Status(); // auto-refresh ownership before next mint
+    await fetchS1Status();
   };
 
   // --- UI ---
@@ -346,12 +349,9 @@ export default function Home() {
                 disabled={eligibleS1.length < 3 || checkingS1}
                 className="px-6 py-2 bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 rounded-xl font-bold text-sm disabled:opacity-50"
               >
-                {eligibleS1.length < 3
-                  ? "Not Enough S1 NFTs"
-                  : "Claim Pack (S1 Holders)"}
+                {eligibleS1.length < 3 ? "Not Enough S1 NFTs" : "Claim Pack (S1 Holders)"}
               </button>
 
-              {/* 🛒 Buy S1 Button */}
               <a
                 href="https://www.pckmint.com/"
                 target="_blank"
@@ -389,9 +389,7 @@ export default function Home() {
                 </button>
                 <div className="mt-3 text-sm text-white/60">
                   Price:{" "}
-                  {mintPrice
-                    ? `${formatEther(mintPrice as bigint)} APE`
-                    : "Loading..."} • Mints 3 NFTs
+                  {mintPrice ? `${formatEther(mintPrice as bigint)} APE` : "Loading..."} • Mints 3 NFTs
                 </div>
               </>
             )}
@@ -405,9 +403,7 @@ export default function Home() {
           </div>
         )}
 
-        {showReveal && mintedTokens.length > 0 && (
-          <NFTReveal tokenIds={mintedTokens} resetMint={resetMint} />
-        )}
+        {showReveal && mintedTokens.length > 0 && <NFTReveal tokenIds={mintedTokens} resetMint={resetMint} />}
       </div>
     </main>
   );
