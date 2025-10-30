@@ -4,7 +4,7 @@
     { "src": "next.config.js", "use": "@vercel/next" }
   ],
   "env": {
-    "NEXT_PUBLIC_SITE_URL": "https://pck2mint.com",
+    "NEXT_PUBLIC_SITE_URL": "https://www.pck2mint.com",
     "NEXT_PUBLIC_CHAIN": "apechain",
     "NEXT_PUBLIC_RPC_URL": "https://rpc.apechain.com",
     "NEXT_PUBLIC_CHAIN_ID": "33139",
