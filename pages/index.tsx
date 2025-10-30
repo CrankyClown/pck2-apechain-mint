@@ -397,12 +397,14 @@ export default function Home() {
               </>
             )}
 
-            {errorMsg && <div className="mt-4 text-red-400 text-sm">{errorMsg}</div>}
-            {total && (
-              <div className="mt-4 text-sm text-white/70">
-                Total Minted: {Number(total).toLocaleString()}
-              </div>
-            )}
+{errorMsg && <div className="mt-4 text-red-400 text-sm">{errorMsg}</div>}
+
+{typeof total === "bigint" && (
+  <div className="mt-4 text-sm text-white/70">
+    Total Minted: {Number(total).toLocaleString()}
+  </div>
+)}
+
           </div>
         )}
 
