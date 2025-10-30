@@ -30,7 +30,7 @@ export const wagmiConfig = createConfig(
       process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID || "",
     appName: "Pop Culture Kids Mint — Series 2",
     appDescription: "Mint your PCK Series 2 Pack",
-    appUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://pck2mint.com",
+    appUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://www.pck2mint.com",
     appIcon: "https://www.pck2mint.com/favicon.ico",
   })
 );

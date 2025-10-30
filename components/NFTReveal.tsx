@@ -121,7 +121,7 @@ export const NFTReveal = ({ tokenIds, resetMint }: NFTRevealProps) => {
       {revealNFTs && (
         <>
           <img
-            src="/pck_logo_shadow.png"
+            src="/pckshadow.png"
             alt="Pop Culture Kids Logo"
             className="w-full max-w-[160px] sm:max-w-xs mx-auto mb-6 drop-shadow-lg"
           />
