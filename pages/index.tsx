@@ -132,8 +132,10 @@ export default function Home() {
             functionName: "ownerOf",
             args: [BigInt(id)],
           });
-          if (owner.toLowerCase() === address.toLowerCase()) owned.push(id);
-        } catch {}
+          if (typeof owner === "string" && owner.toLowerCase() === address.toLowerCase()) {
+            owned.push(id);
+          }
+                  } catch {}
       }
 
       const eligible: number[] = [];
